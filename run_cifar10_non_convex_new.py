@@ -18,7 +18,7 @@ if __name__ == "__main__":
                         "--query_point_momentum", "0.1",
                         "--batch_size", str(batch),
                         "--seed", str(seed),
-                        # "--use_wandb",
+                        "--use_wandb",
                         # "--use_alpha_t",
                     ]
                     subprocess.run(command)
