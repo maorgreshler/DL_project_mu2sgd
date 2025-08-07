@@ -19,7 +19,7 @@ if __name__ == "__main__":
                         "--seed", str(seed),
                         "--eval_interval", "20",
                         "--projection_radius", "1",
-                        # "--use_wandb",
+                        "--use_wandb",
                         "--use_alpha_t",
                         "--use_beta_t",
                     ]

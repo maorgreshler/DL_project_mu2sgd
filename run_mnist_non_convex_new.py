@@ -18,7 +18,7 @@ if __name__ == "__main__":
                         "--query_point_momentum", "0.1",
                         "--batch_size", str(batch),
                         "--seed", str(seed),
-                        "--eval_interval", str(20),
+                        "--eval_interval", str(60),
                         "--use_wandb",
                         # "--use_alpha_t",
                     ]
