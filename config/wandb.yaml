@@ -1,2 +1,2 @@
-project: "debug"
+project: "cifar10_non_convex_adam"
 entity: "maorg-technion"

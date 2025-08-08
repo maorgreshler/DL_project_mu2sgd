@@ -81,6 +81,11 @@ def main():
             "momentum": 0.0
         }
         optimizer = OPTIMIZER_REGISTRY["sgd"]
+    elif args.optimizer == "adam":  # Added by Maor
+        optimizer_params = {
+            "lr": args.learning_rate
+        }
+        optimizer = OPTIMIZER_REGISTRY["adam"]
     else:
         optimizer_params = {
             "lr": args.learning_rate,
