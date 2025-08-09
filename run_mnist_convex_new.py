@@ -5,7 +5,7 @@ if __name__ == "__main__":
     for seed in [1, 2, 3]:
         for batch in [64]:
             for lr in [10, 1, 0.1, 0.01, 0.001, 0.0001]:
-                for optimizer in ['adam']:
+                for optimizer in ['adaptive_mu2sgd']:
                     command = [
                         "python", "main.py",
                         "--task", "clf",

@@ -1,2 +1,2 @@
-project: "cifar10_non_convex_adam"
+project: "cifar10_Resnet18_adaptiveMu2_seed1_2"
 entity: "maorg-technion"
