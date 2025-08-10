@@ -138,7 +138,7 @@ class Trainer:
         outputs = None
         loss = None
 
-        if self.optimizer.__class__.__name__ in ['Mu2SGD', 'STORM']:
+        if self.optimizer.__class__.__name__ in ['Mu2SGD', 'STORM', 'AdaptiveMu2SGD']:
             if first_step:
                 self.optimizer.zero_grad()
                 outputs = self.model(inputs)

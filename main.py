@@ -52,6 +52,13 @@ def main():
     parser.add_argument('--use_wandb', action='store_true',
                         help='Flag to enable visualization of results with Weights & Biases.')
 
+    # for adaptive_mu2sgd!!!!!!!!!!!!
+    parser.add_argument('--rms_decay', type=float, default=0.99,
+                        help='RMSprop decay rate for adaptive_mu2sgd optimizer.')
+    parser.add_argument('--epsilon', type=float, default=1e-8,
+                        help='Epsilon value for numerical stability in adaptive_mu2sgd.')
+    # for adaptive_mu2sgd!!!!!!!!!!!!
+
     # Parse command-line arguments
     args = parser.parse_args()
 
@@ -81,6 +88,23 @@ def main():
             "momentum": 0.0
         }
         optimizer = OPTIMIZER_REGISTRY["sgd"]
+    elif args.optimizer == "adam":  # Added by Maor
+        optimizer_params = {
+            "lr": args.learning_rate
+        }
+        optimizer = OPTIMIZER_REGISTRY["adam"]
+    elif args.optimizer == "adaptive_mu2sgd":  # NEW
+        optimizer_params = {
+            "lr": args.learning_rate,
+            "momentum": args.gradient_momentum,
+            "gamma": args.query_point_momentum,
+            "use_alpha_t": args.use_alpha_t,
+            "use_beta_t": args.use_beta_t,
+            "projection_radius": args.projection_radius,
+            "rms_decay": args.rms_decay,
+            "epsilon": args.epsilon
+        }
+        optimizer = OPTIMIZER_REGISTRY["adaptive_mu2sgd"]
     else:
         optimizer_params = {
             "lr": args.learning_rate,

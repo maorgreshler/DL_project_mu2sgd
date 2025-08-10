@@ -1,2 +1,2 @@
-project: "mu2_cifar10_nonconvex"
-entity: "maorg-technion"  # put your username here
+project: "cifar10_Resnet18_adaptiveMu2_seed1_2"
+entity: "maorg-technion"

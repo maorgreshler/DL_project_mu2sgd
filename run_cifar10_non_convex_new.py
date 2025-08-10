@@ -5,7 +5,7 @@ if __name__ == "__main__":
     for seed in [1, 2, 3]:
         for batch in [32]:
             for lr in [10, 1, 0.1, 0.01, 0.001, 0.0001]:
-                for optimizer in ['mu2sgd', 'momentum', 'sgd', 'storm', 'anytime_sgd']:
+                for optimizer in ['mu2sgd', 'momentum', 'sgd', 'storm', 'anytime_sgd', 'adaptive_mu2sgd']:
                     command = [
                         "python", "main.py",
                         "--task", "clf",
@@ -18,7 +18,7 @@ if __name__ == "__main__":
                         "--query_point_momentum", "0.1",
                         "--batch_size", str(batch),
                         "--seed", str(seed),
-                        # "--use_wandb",
+                        "--use_wandb",
                         # "--use_alpha_t",
                     ]
                     subprocess.run(command)
